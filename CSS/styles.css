@@ -1,0 +1,20 @@
+.container {
+    display: grid; 
+    grid-auto-columns: 1fr; 
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    height: 100vh;
+    width: 100vw;   
+    grid-template-areas: 
+      ". . ."
+      ". login ."
+      ". . ."; 
+  }
+  .login { grid-area: login; }
+
+#login {
+    display: flex;
+    grid-area: login;
+    flex-direction: column-reverse;
+}
