@@ -1,12 +1,11 @@
 <?php
-include_once getcwd()."\BD\Configuracao.php";
 
 class MySQL{
 	
 	private $connection;
 	
 	public function __construct(){
-		$this->connection = new mysqli(HOST,USUARIO,SENHA,BANCO);
+		$this->connection = new mysqli("localhost","root","","erp_networking");
 		$this->connection->set_charset("utf8");
 	}
 	public function __destruct(){
@@ -26,4 +25,10 @@ class MySQL{
 		return $data;
 		}
 	}
+
+	/*
+	if(!$connection){
+		die("Connection failed: ". mysqli_connect_error());
+	}
+	*/
 ?>
