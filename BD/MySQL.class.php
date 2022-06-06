@@ -23,8 +23,18 @@ class MySQL{
 			$data[] = $item;
 		}
 		return $data;
-		}
 	}
+	public function generate_console_dev($message){
+		date_default_timezone_set("America/Sao_Paulo");
+		$date_utc_br = date("Y-m-d H:i:s");
+		$this -> executa("INSERT INTO console_dev (date, message) values ('".$date_utc_br."', '".$message."')");
+	}
+	public function generate_console_admin($message){
+		date_default_timezone_set("America/Sao_Paulo");
+		$date_utc_br = date("Y-m-d H:i:s");
+		$this -> executa("INSERT INTO console_admin (date, message) values ('".$date_utc_br."', '".$message."')");
+	}
+}
 
 	/*
 	if(!$connection){
