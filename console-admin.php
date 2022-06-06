@@ -9,11 +9,20 @@
 <body>
     
 <?php
+include_once(getcwd()."\BD\MySQL.class.php");
+$conn = new Mysql();
 
+$conn -> __construct();
 
+$consulta = $conn -> consulta("SELECT id, date, message FROM console_admin");
+
+foreach($consulta as $line){
+    echo strval("ID ".$line[0]."<br>");
+    echo strval("DATE ".$line[1]);
+    echo strval("/ ".$line[2]."<br>");
+    echo "----------------------------------------<br>";
+}
 
 ?>
-
-
 </body>
 </html>
